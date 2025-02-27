@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malisa❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'Phetsarath OT';
+            src: url('fonts/PhetsarathOT.ttf') format('truetype');
+        }
+
+        body {
+            font-family: 'Phetsarath OT', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            color: #e74c3c;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+            display: none;
+            /* ซ่อนข้อความเริ่มต้น */
+        }
+
+        p {
+            color: #333;
+            font-size: 1.2em;
+            margin: 10px 0;
+            display: none;
+            /* ซ่อนข้อความเริ่มต้น */
+        }
+
+        .heart {
+            color: #e74c3c;
+            font-size: 2em;
+            animation: beat 1.5s infinite;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #e74c3c;
+            margin: 20px auto;
+            object-fit: cover;
+            animation: float 3s ease-in-out infinite;
+            display: none;
+            /* ซ่อนรูปภาพเริ่มต้น */
+        }
+
+        .open-button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes beat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="open-button" onclick="showContent()">open</button>
+        <h1 id="heading">🤍🤍🤍🤍</h1>
+        <img id="profile-img"
+            src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWp5aGNvY3dqYzZpaThsaWFwYWhkbjh5NWZ0YXAxbGtudzhwYWV3ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Cq4grUlyVj5wHFdoi2/giphy.gif"
+            alt="รูปแฟน" class="profile-img">
+        <p id="message1">ຂ້ອຍມີເຈົ້າແລ້ວ ຂ້ອຍພໍແລ້ວ ຄົນອື່ນຈະ</p>
+        <p id="message2">ດີຂະຫນາດໃດກະບໍ່ສົນ.<span class="heart">🤍🧑🏻‍❤️‍👩🏻</span></p>
+    </div>
+
+    <audio id="background-music" src="./static/ssstik.io_1740650786308.mp3"></audio>
+
+    <script>
+        function showContent() {
+
+            var audio = document.getElementById("background-music");
+            audio.loop = true;
+            audio.play();
+
+            document.getElementById("heading").style.display = "block";
+            document.getElementById("profile-img").style.display = "block";
+            document.getElementById("message1").style.display = "block";
+            document.getElementById("message2").style.display = "block";
+
+
+            document.querySelector(".open-button").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
